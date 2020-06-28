@@ -148,7 +148,8 @@ USE_TZ = True
 
 STATIC_ROOT='/usr/share/nginx/html/static/'
 STATIC_URL='/static/'
-
+#test2
+CORS_ALLOW_CREDENTIALS = True
 
 if DEBUG:
     CORS_ORIGIN_WHITELIST = (
@@ -199,4 +200,3 @@ if DEBUG:
 #       '192.168.100.106:8080',
 #    ]
     # レスポンスを公開する
-#    CORS_ALLOW_CREDENTIALS = True
