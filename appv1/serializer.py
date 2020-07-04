@@ -45,6 +45,8 @@ class DiceRollSerializer(serializers.ModelSerializer):
         model = DiceRoll
         fields = (
         'session_users'
+        ,'twitter_users_photo'
+        ,'twitter_users_name'
         ,'roll_dice_command'
         )	
     
