@@ -23,6 +23,7 @@ class DiceLogSerializer(serializers.ModelSerializer):
          #動的フィールドfields = ('value','rollUserTicketNo','rollDiceCommand', 'rollDiceResult','isRollDiceResultresulFumble','isRollDiceResultresulCritical','insertDate')	
         fields = ('dice_roll_id'
         ,'session_users'
+        ,'twitter_users_photo'
         ,'user_name'
         ,'roll_dice_command'
         ,'roll_target'

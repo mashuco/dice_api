@@ -12,6 +12,8 @@ class UserAdmin(admin.ModelAdmin):
 class DiceLogAdmin(admin.ModelAdmin):
    list_display=(
       'session_users',
+      'twitter_users_photo',
+      'twitter_users_name',
       'roll_dice_command',
       'roll_target',
       'roll_dice_result_split',

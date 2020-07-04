@@ -49,6 +49,8 @@ class DiceRoll(models.Model):
         verbose_name ="ダイスログ"
         verbose_name_plural = "ダイスログ"
     session_users = models.ForeignKey(SessionUsers, on_delete=models.CASCADE)	
+    twitter_users_photo = models.CharField(blank=True,max_length=255)
+    twitter_users_name = models.CharField(blank=True,max_length=255)
     roll_dice_command = models.CharField(max_length=255)
     roll_target= models.CharField(max_length=255,blank=True)
     roll_dice_result_split = models.CharField(blank=True,max_length=8)
