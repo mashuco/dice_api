@@ -24,6 +24,7 @@ class DiceLogSerializer(serializers.ModelSerializer):
         fields = ('dice_roll_id'
         ,'session_users'
         ,'twitter_users_photo'
+        ,'twitter_users_name'
         ,'user_name'
         ,'roll_dice_command'
         ,'roll_target'
