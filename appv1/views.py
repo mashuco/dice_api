@@ -37,7 +37,7 @@ class DiceRollFilter(django_filters.FilterSet):
         ]
 
 class DiceLogSet(viewsets.ModelViewSet):
-    queryset = DiceRoll.objects.all()
+    queryset = DiceRoll.objects.all().order_by('insert_date')
     serializer_class = DiceLogSerializer
     filter_class = DiceRollFilter
 
