@@ -1,6 +1,11 @@
 from django.db import models
 import uuid as uuid_lib
 import random
+from logging import getLogger, StreamHandler, DEBUG
+import re
+
+logger = getLogger(__name__)
+
 
 # Create your models here.
 
@@ -65,13 +70,20 @@ class DiceRoll(models.Model):
 
     #
     def save(self, **kwargs):
+
         diceComand  =self.roll_dice_command.split(sep="d")
+        if diceComand[0].isdecimal() and diceComand[0].isdecimal():
+            num = int(diceComand[0])
+            if num  < 0:num  = num *-1
 
-        #self.rollDiceResult = str(int(l[0]) * int(l[1]))
-        self.roll_dice_result_sum = str(int(diceComand[0]) * random.randrange(1,int(diceComand[1])))
-        #self.rollDiceResult = str(1 * 1)
+            face  = int(diceComand[1])
+            if face < 0:face = face *-1
+            if face == 0:face = 1
+            sum = 0    
+            for i in range(0,num):
+               sum = sum +random.randrange(1,face)
 
+            self.roll_dice_result_sum = str(sum)
+            logger.debug("debugメッセージ")
+    
         super(DiceRoll, self).save(**kwargs)
-
-    ##動的フィールドdef hoge(self):
-    #return "{}".format(self.rollDiceCommand)
