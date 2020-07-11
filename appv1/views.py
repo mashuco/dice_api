@@ -12,13 +12,10 @@ class TrpgSessionSet(viewsets.ModelViewSet):
         lookup_field = 'trpg_session_id'
 
 class SessionUserFilter(django_filters.FilterSet):
-    #name = django_filters.CharFilter(lookup_expr='iexact')
-    #id = django_filters.CharFilter(lookup_expr='iexact')
-    #ticketNo = django_filters.CharFilter(lookup_expr='iexact')
-  
+ 
     class Meta:
         model = SessionUsers
-        fields = ['name','ticket_no','trpg_session','trpg_session__trpg_session_id']
+        fields = ['name','session_user_id','ticket_no','trpg_session','trpg_session__trpg_session_id']
         
 class SessionUserSet(viewsets.ModelViewSet):
     queryset = SessionUsers.objects.all()
