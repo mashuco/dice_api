@@ -25,6 +25,9 @@ class SessionUserSerializer(serializers.ModelSerializer):
 
 class DiceLogSerializer(serializers.ModelSerializer):	
     user_name = serializers.CharField(source = 'session_users.name')
+    character_image = serializers.CharField(source = 'session_users.character_image')
+    character_name = serializers.CharField(source = 'session_users.character_name')
+    character_profile = serializers.CharField(source = 'session_users.character_profile')
 
     class Meta:
         model = DiceRoll
@@ -33,6 +36,9 @@ class DiceLogSerializer(serializers.ModelSerializer):
         ,'session_users'
         ,'twitter_users_photo'
         ,'twitter_users_name'
+        ,'character_image'
+        ,'character_name'
+        ,'character_profile'
         ,'user_name'
         ,'roll_dice_command'
         ,'roll_target'
