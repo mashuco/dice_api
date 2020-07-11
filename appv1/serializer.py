@@ -5,7 +5,11 @@ from .models import TrpgSession,SessionUsers,DiceRoll
 class TrpgSessionSerializer(serializers.ModelSerializer):	
     class Meta:
         model = TrpgSession
-        fields = ('trpg_session_id','trpg_session_name')	
+        fields = ('trpg_session_id'
+        ,'trpg_session_name'
+        ,'trpg_session_outline'
+        ,'trpg_session_image '
+        )	
 
 class SessionUserSerializer(serializers.ModelSerializer):	
     trpg_session_name = serializers.CharField(source = 'trpg_session.trpg_session_name')

@@ -21,6 +21,8 @@ class TrpgSession(models.Model):
         verbose_name_plural = "セッション名"
  
     trpg_session_name = models.CharField("セッション名",max_length=255)
+    trpg_session_outline = models.CharField("セッション概要",blank=True,max_length=1024)
+    trpg_session_image = models.ImageField(upload_to='images',blank=True, null=True)
 
     def __str__(self):
         return self.trpg_session_name

@@ -3,8 +3,11 @@ from .models import TrpgSession,SessionUsers,DiceRoll
 
 # Register your models here.
 class SessionAdmin(admin.ModelAdmin):
-   #list_display=('pk','trpg_session_name', 'trpg_session_code','user_auth')
-   list_display=('trpg_session_id','trpg_session_name')
+   list_display= ('trpg_session_id'
+        ,'trpg_session_name'
+        ,'trpg_session_outline'
+        ,'trpg_session_image'
+        )	
 
 class UserAdmin(admin.ModelAdmin):
    list_display=('trpg_session'
