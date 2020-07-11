@@ -25,7 +25,7 @@ class SessionUserSerializer(serializers.ModelSerializer):
 
 class DiceLogSerializer(serializers.ModelSerializer):	
     user_name = serializers.CharField(source = 'session_users.name')
-    character_image = serializers.CharField(source = 'session_users.character_image')
+    character_image = serializers.ImageField(source = 'session_users.character_image')
     character_name = serializers.CharField(source = 'session_users.character_name')
     character_profile = serializers.CharField(source = 'session_users.character_profile')
 
