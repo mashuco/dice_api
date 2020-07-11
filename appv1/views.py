@@ -5,9 +5,19 @@ from .models import TrpgSession,SessionUsers,DiceRoll
 
 from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer
 
+class TrpgSessionFilter(django_filters.FilterSet):
+ 
+    class Meta:
+        model = TrpgSession
+        fields = [ 'trpg_session_id'
+        ,'trpg_session_name'
+        ,'trpg_session_outline'
+        	]
+
 class TrpgSessionSet(viewsets.ModelViewSet):
     queryset = TrpgSession.objects.all()
     serializer_class = TrpgSessionSerializer
+    filter_class = TrpgSessionFilter
     class META:
         lookup_field = 'trpg_session_id'
 
