@@ -7,7 +7,14 @@ class SessionAdmin(admin.ModelAdmin):
    list_display=('trpg_session_id','trpg_session_name')
 
 class UserAdmin(admin.ModelAdmin):
-   list_display=('trpg_session','session_user_id','name', 'ticket_no')
+   list_display=('trpg_session'
+      ,'session_user_id'
+      ,'name'
+      ,'ticket_no'
+      ,'character_image'
+      ,'character_name'
+      ,'character_profile'
+      )
 
 class DiceLogAdmin(admin.ModelAdmin):
    list_display=(

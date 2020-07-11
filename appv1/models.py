@@ -39,6 +39,9 @@ class SessionUsers(models.Model):
     trpg_session = models.ForeignKey(TrpgSession, on_delete=models.CASCADE)	
     name = models.CharField("ユーザー名",max_length=255)
     ticket_no = models.CharField("チケットNO",max_length=8)
+    character_image = models.ImageField(upload_to='images',blank=True, null=True)
+    character_name = models.CharField("キャラ名",max_length=255)
+    character_profile = models.CharField("キャラプロフィール",max_length=255)
 
     def __str__(self):
         return self.name

@@ -12,7 +12,15 @@ class SessionUserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SessionUsers
-        fields = ('trpg_session','trpg_session_name','session_user_id','name', 'ticket_no')	
+        fields = ('trpg_session'
+        ,'trpg_session_name'
+        ,'session_user_id'
+        ,'name'
+        , 'ticket_no'
+        ,'character_image'
+        ,'character_name'
+        ,'character_profile'
+        )	
 
 
 class DiceLogSerializer(serializers.ModelSerializer):	
