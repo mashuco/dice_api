@@ -8,7 +8,7 @@ class TrpgSessionSerializer(serializers.ModelSerializer):
         fields = ('trpg_session_id'
         ,'trpg_session_name'
         ,'trpg_session_outline'
-        ,'trpg_session_image '
+        ,'trpg_session_image'
         )	
 
 class SessionUserSerializer(serializers.ModelSerializer):	
