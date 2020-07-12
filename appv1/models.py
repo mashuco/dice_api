@@ -32,7 +32,7 @@ class SessionUsers(models.Model):
         primary_key=True,
         db_index=True,
         default=uuid_lib.uuid4,
-        editable=False)
+        editable=True)
 
     class Meta:
         verbose_name ="ユーザー"
@@ -44,6 +44,9 @@ class SessionUsers(models.Model):
     character_image = models.ImageField(upload_to='images',blank=True, null=True)
     character_name = models.CharField("キャラ名",max_length=255)
     character_profile = models.CharField("キャラプロフィール",max_length=255)
+    tw_UID   = models.CharField("twetter UID",blank=True,max_length=50)
+    tw_name  = models.CharField("twetter Name",blank=True,max_length=50)
+    tw_photo = models.CharField("twetter Photo",blank=True,max_length=50)
 
     def __str__(self):
         return self.name

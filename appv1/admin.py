@@ -17,21 +17,25 @@ class UserAdmin(admin.ModelAdmin):
       ,'character_image'
       ,'character_name'
       ,'character_profile'
+      ,'tw_UID'
+      ,'tw_name'
+      ,'tw_photo'
+
       )
 
 class DiceLogAdmin(admin.ModelAdmin):
    list_display=(
-      'session_users',
-      'twitter_users_photo',
-      'twitter_users_name',
-      'roll_dice_command',
-      'roll_target',
-      'roll_dice_result_split',
-      'roll_dice_result_sum',
-      'is_roll_daice_suees',
-      'is_roll_dice_resultresul_fumble',
-      'is_roll_dice_resultresul_critical',
-      'insert_date'
+      'session_users'
+      ,'twitter_users_photo'
+      ,'twitter_users_name'
+      ,'roll_dice_command'
+      ,'roll_target'
+      ,'roll_dice_result_split'
+      ,'roll_dice_result_sum'
+      ,'is_roll_daice_suees'
+      ,'is_roll_dice_resultresul_fumble'
+      ,'is_roll_dice_resultresul_critical'
+      ,'insert_date'
   )
 
 class DiceRollAdmin(admin.ModelAdmin):

@@ -24,6 +24,19 @@ class SessionUserSerializer(serializers.ModelSerializer):
         ,'character_image'
         ,'character_name'
         ,'character_profile'
+        ,'tw_UID'
+        ,'tw_name'
+        ,'tw_photo'
+        )	
+
+class SessionUserTWUpdateSerializer(serializers.ModelSerializer):	
+    class Meta:
+        model = SessionUsers
+        fields = (
+        'session_user_id'
+        ,'tw_UID'
+        ,'tw_name'
+        ,'tw_photo'
         )	
 
 
