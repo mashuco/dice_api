@@ -46,7 +46,7 @@ class SessionUsers(models.Model):
     character_profile = models.CharField("キャラプロフィール",max_length=255)
     tw_UID   = models.CharField("twetter UID",blank=True,max_length=50)
     tw_name  = models.CharField("twetter Name",blank=True,max_length=50)
-    tw_photo = models.CharField("twetter Photo",blank=True,max_length=50)
+    tw_photo = models.CharField("twetter Photo",blank=True,max_length=255)
 
     def __str__(self):
         return self.name
