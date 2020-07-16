@@ -25,7 +25,14 @@ class SessionUserFilter(django_filters.FilterSet):
  
     class Meta:
         model = SessionUsers
-        fields = ['name','session_user_id','ticket_no','trpg_session','trpg_session__trpg_session_id']
+        fields = [
+            'name'
+            ,'session_user_id'
+            ,'ticket_no'
+            ,'trpg_session'
+            ,'trpg_session__trpg_session_id'
+            ,'tw_UID'
+        ]
         
 class SessionUserSet(viewsets.ModelViewSet):
     queryset = SessionUsers.objects.all()
