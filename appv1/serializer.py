@@ -29,6 +29,25 @@ class SessionUserSerializer(serializers.ModelSerializer):
         ,'tw_photo'
         )	
 
+class SessionUserUpdateSerializer(serializers.ModelSerializer):	
+     character_image = serializers.ImageField(max_length=None,use_url=True)
+  
+     class Meta:
+        model = SessionUsers
+        fields = (
+        'trpg_session'
+        ,'session_user_id'
+        ,'name'
+        , 'ticket_no'
+        ,'character_image'
+        ,'character_name'
+        ,'character_profile'
+        ,'tw_UID'
+        ,'tw_name'
+        ,'tw_photo'
+        )	
+
+
 class SessionUserTWUpdateSerializer(serializers.ModelSerializer):	
     class Meta:
         model = SessionUsers

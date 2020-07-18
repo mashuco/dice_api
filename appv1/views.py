@@ -1,9 +1,7 @@
 import django_filters
-
 from rest_framework import viewsets
 from .models import TrpgSession,SessionUsers,DiceRoll
-
-from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer,SessionUserTWUpdateSerializer
+from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer,SessionUserTWUpdateSerializer,SessionUserUpdateSerializer
 
 class TrpgSessionFilter(django_filters.FilterSet):
  
@@ -43,6 +41,10 @@ class SessionUserTWUpdateSet(viewsets.ModelViewSet):
     queryset = SessionUsers.objects.all()
     serializer_class = SessionUserTWUpdateSerializer
 
+
+class SessionUserUpdateSet(viewsets.ModelViewSet):
+    queryset = SessionUsers.objects.all()
+    serializer_class = SessionUserUpdateSerializer
 
 
 

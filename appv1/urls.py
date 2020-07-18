@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .views import TrpgSessionSet ,SessionUserSet,DiceRollSet,DiceLogSet,SessionUserTWUpdateSet
+from .views import TrpgSessionSet ,SessionUserSet,DiceRollSet,DiceLogSet,SessionUserTWUpdateSet,SessionUserUpdateSet
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls import url
@@ -9,6 +9,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 router = routers.DefaultRouter()
 router.register(r'session', TrpgSessionSet)
 router.register(r'user', SessionUserSet)
+router.register(r'userUp', SessionUserUpdateSet)
 router.register(r'userTwUp', SessionUserTWUpdateSet)
 router.register(r'uEntry', SessionUserSet)
 router.register(r'uDiceLog', DiceLogSet)
