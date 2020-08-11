@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .views import TrpgSessionSet ,SessionUserSet,DiceRollSet,DiceLogSet,SessionUserTWUpdateSet,SessionUserUpdateSet
+from .views import TrpgSessionSet ,SessionUserSet,DiceRollSet,DiceLogSet,SessionUserTWUpdateSet,SessionUserUpdateSet,SessionSceneSet,MemoSet,ItemMasterSet,ItemSet
 from django.conf import settings
 from django.urls import path, include
 from django.conf.urls import url
@@ -14,6 +14,10 @@ router.register(r'userTwUp', SessionUserTWUpdateSet)
 router.register(r'uEntry', SessionUserSet)
 router.register(r'uDiceLog', DiceLogSet)
 router.register(r'uDiceRoll', DiceRollSet)
+router.register(r'scene', SessionSceneSet)
+router.register(r'memo', MemoSet)
+router.register(r'itemM', ItemMasterSet)
+router.register(r'item', ItemSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
