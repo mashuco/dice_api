@@ -63,7 +63,7 @@ class SessionUsers(models.Model):
 
     trpg_session = models.ForeignKey(TrpgSession, on_delete=models.CASCADE)	
     name = models.CharField("ユーザー名",max_length=255)
-    ticket_no = models.CharField("チケットNO",max_length=8)
+    ticket_no = models.CharField("チケットNO",max_length=12, unique=True)
     character_image = models.ImageField(upload_to='images',blank=True, null=True)
     character_name = models.CharField("キャラ名",max_length=255)
     character_profile = models.TextField("キャラプロフィール",max_length=2000)
