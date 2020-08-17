@@ -22,9 +22,7 @@ class TrpgSession(models.Model):
  
     trpg_session_name = models.CharField("セッション名",max_length=255)
     trpg_session_outline = models.TextField("セッション概要",blank=True,max_length=5000)
-    trpg_session_image = models.ImageField(upload_to='images',blank=True, null=True)
-    trpg_session_bgm = models.FileField (upload_to='bgm',blank=True, null=True)
-
+    trpg_session_now_scene = models.UUIDField("現在のシーン",null=True)
     def __str__(self):
         return self.trpg_session_name
 

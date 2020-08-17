@@ -3,16 +3,15 @@ from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMast
  
  
 class TrpgSessionSerializer(serializers.ModelSerializer):	
-    trpg_session_image = serializers.ImageField(max_length=None,use_url=True)
-    trpg_session_bgm = serializers.FileField(max_length=None,use_url=True)
+    #trpg_session_image = serializers.ImageField(max_length=None,use_url=True)
+    #trpg_session_bgm = serializers.FileField(max_length=None,use_url=True)
 
     class Meta:
         model = TrpgSession
         fields = ('trpg_session_id'
         ,'trpg_session_name'
         ,'trpg_session_outline'
-        ,'trpg_session_image'
-        ,'trpg_session_bgm'
+        ,'trpg_session_now_scene'
         )	
 
 
