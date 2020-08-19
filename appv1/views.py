@@ -26,6 +26,7 @@ class SessionUserFilter(django_filters.FilterSet):
         model = SessionUsers
         fields = [
             'name'
+            ,'is_session_master'
             ,'session_user_id'
             ,'ticket_no'
             ,'trpg_session'

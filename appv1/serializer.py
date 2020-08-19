@@ -25,6 +25,7 @@ class SessionUserSerializer(serializers.ModelSerializer):
         ,'trpg_session_name'
         ,'session_user_id'
         ,'name'
+        ,'is_session_master'
         , 'ticket_no'
         ,'character_image'
         ,'character_name'

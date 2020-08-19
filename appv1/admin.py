@@ -13,6 +13,7 @@ class UserAdmin(admin.ModelAdmin):
    list_display=('trpg_session'
       ,'session_user_id'
       ,'name'
+      ,'is_session_master'
       ,'ticket_no'
       ,'character_image'
       ,'character_name'
