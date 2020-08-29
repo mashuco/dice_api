@@ -12,6 +12,8 @@ class TrpgSessionSerializer(serializers.ModelSerializer):
         ,'trpg_session_name'
         ,'trpg_session_outline'
         ,'trpg_session_now_scene'
+        ,'firebase_message_key_id'
+        ,'firebase_scean_key_id'
         )	
 
 

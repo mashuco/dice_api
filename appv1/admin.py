@@ -3,10 +3,13 @@ from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMast
 
 # Register your models here.
 class SessionAdmin(admin.ModelAdmin):
-   list_display= ('trpg_session_id'
+   list_display= (
+      'trpg_session_id'
         ,'trpg_session_name'
         ,'trpg_session_outline'
         ,'trpg_session_now_scene'
+        ,'firebase_message_key_id'
+        ,'firebase_scean_key_id'
         )	
 
 class UserAdmin(admin.ModelAdmin):

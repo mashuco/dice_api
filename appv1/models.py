@@ -23,6 +23,9 @@ class TrpgSession(models.Model):
     trpg_session_name = models.CharField("セッション名",max_length=255)
     trpg_session_outline = models.TextField("セッション概要",blank=True,max_length=5000)
     trpg_session_now_scene = models.UUIDField("現在のシーン",null=True)
+    firebase_message_key_id = models.CharField(max_length=100,null=True)
+    firebase_scean_key_id = models.CharField(max_length=100,null=True)
+    
     def __str__(self):
         return self.trpg_session_name
 
