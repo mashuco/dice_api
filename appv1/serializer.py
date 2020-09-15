@@ -35,28 +35,37 @@ class SessionUserSerializer(serializers.ModelSerializer):
         ,'tw_UID'
         ,'tw_name'
         ,'tw_photo'
-        )	
+        )
 
 class SessionUserUpdateSerializer(serializers.ModelSerializer):	
-     character_image = serializers.ImageField(max_length=None,use_url=True)
+    character_image = serializers.ImageField(max_length=None,use_url=True)
+    character_name= serializers.CharField()
+    character_profile= serializers.CharField()
   
-     class Meta:
+    class Meta:
         model = SessionUsers
         fields = (
-        'trpg_session'
-        ,'session_user_id'
-        ,'name'
-        , 'ticket_no'
-        ,'character_image'
-        ,'character_name'
-        ,'character_profile'
-        ,'tw_UID'
-        ,'tw_name'
-        ,'tw_photo'
-        )	
+            'session_user_id'
+            ,'character_image'
+            ,'character_name'
+            ,'character_profile'
+        )
+
+    def validate_character_name(self, character_name):
+        if not(len(character_name) <=20):
+            raise serializers.ValidationError('キャラクター名は20文字までです')
+        return character_name
+
+    def validate_character_profile(self, character_profile):
+        if not(len(character_profile) <=201):
+            raise serializers.ValidationError('プロフィールは名は200文字までです')
+        return character_profile
 
 
-class SessionUserTWUpdateSerializer(serializers.ModelSerializer):	
+class SessionUserTWUpdateSerializer(serializers.ModelSerializer):
+    character_profile= serializers.CharField()	
+    character_profile= serializers.CharField()	
+
     class Meta:
         model = SessionUsers
         fields = (
@@ -65,6 +74,16 @@ class SessionUserTWUpdateSerializer(serializers.ModelSerializer):
         ,'tw_name'
         ,'tw_photo'
         )	
+
+    def validate_tw_UID(self, tw_UID):
+        if not(len(tw_UID) <=16):
+            raise serializers.ValidationError('不正なTwitterIDです')
+        return tw_UID
+
+    def validate_tw_name(self, tw_name):
+        if not(len(tw_name) <=15):
+            raise serializers.ValidationError('不正なTwitterIDです')
+        return tw_name
 
 
 class DiceLogSerializer(serializers.ModelSerializer):	
@@ -75,7 +94,6 @@ class DiceLogSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DiceRoll
-         #動的フィールドfields = ('value','rollUserTicketNo','rollDiceCommand', 'rollDiceResult','isRollDiceResultresulFumble','isRollDiceResultresulCritical','insertDate')	
         fields = ('dice_roll_id'
         ,'session_users'
         ,'twitter_users_photo'
@@ -94,8 +112,6 @@ class DiceLogSerializer(serializers.ModelSerializer):
         ,'insert_date'
         )	
     
-    #動的フィールドdef get_value(self, obj):
-    #    return obj.hoge()
 
 class DiceRollSerializer(serializers.ModelSerializer):	
     
