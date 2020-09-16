@@ -63,8 +63,8 @@ class SessionUserUpdateSerializer(serializers.ModelSerializer):
 
 
 class SessionUserTWUpdateSerializer(serializers.ModelSerializer):
-    tw_UID= serializers.CharField(blank=True)	
-    tw_name= serializers.CharField(blank=True)	
+    tw_UID= serializers.CharField(required=False)	
+    tw_name= serializers.CharField(required=False,)	
     class Meta:
         model = SessionUsers
         fields = (
