@@ -75,7 +75,7 @@ class SessionUserTWUpdateSerializer(serializers.ModelSerializer):
         )	
 
     def validate_tw_UID(self, tw_UID):
-        if not(len(tw_UID) <=16):
+        if not(len(tw_UID) <=28):
             raise serializers.ValidationError('不正なTwitterIDです')
         return tw_UID
 
