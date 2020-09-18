@@ -35,7 +35,8 @@ class SessionUserFilter(django_filters.FilterSet):
         ]
         
 class SessionUserSet(viewsets.ModelViewSet):
-    queryset = SessionUsers.objects.all()
+    queryset = SessionUsers.objects.all().order_by('ticket_no')
+    
     serializer_class = SessionUserSerializer
     filter_class = SessionUserFilter
 
