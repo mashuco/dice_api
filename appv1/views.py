@@ -2,9 +2,10 @@ import django_filters
 from rest_framework import viewsets
 from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMaster,Item
 from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer,SessionUserTWUpdateSerializer,SessionUserUpdateSerializer,SessionSceneSerializer,MemoSerializer,ItemMasterSerializer,ItemSerializer
-
+from rest_framework.permissions import IsAuthenticated
 
 class TrpgSessionFilter(django_filters.FilterSet):
+    permission_classes = (IsAuthenticated,)
  
     class Meta:
         model = TrpgSession

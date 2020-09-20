@@ -5,6 +5,7 @@ from django.urls import path, include
 from django.conf.urls import url
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from rest_framework_jwt.views import obtain_jwt_token
 
 router = routers.DefaultRouter()
 router.register(r'session', TrpgSessionSet)
@@ -21,6 +22,8 @@ router.register(r'item', ItemSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
+    url(r'^api-auth/', obtain_jwt_token),
+    url(r'^jwt-token', obtain_jwt_token),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
