@@ -19,12 +19,10 @@ from appv1.urls import router as trpg_session_api_router  #add
 from django.conf import settings
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from rest_framework_jwt.views import obtain_jwt_token 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(trpg_session_api_router.urls)),  #add
-    path('api-token-auth/', obtain_jwt_token),    
 ] 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
