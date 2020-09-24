@@ -29,6 +29,7 @@ class SessionUserSerializer(serializers.ModelSerializer):
         ,'name'
         ,'is_session_master'
         , 'ticket_no'
+        ,'handout'
         ,'character_image'
         ,'character_name'
         ,'character_profile'

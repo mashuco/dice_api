@@ -66,6 +66,7 @@ class SessionUsers(models.Model):
     name = models.CharField("ユーザー名",max_length=20)
     is_session_master =  models.BooleanField(default=False,blank=False)
     ticket_no = models.CharField("チケットNO",max_length=12, unique=True)
+    handout = models.TextField("ハンドアウト",max_length=2000,blank=True)
     character_image = models.ImageField(upload_to='images',blank=True, null=True)
     character_name = models.CharField("キャラ名",max_length=20)
     character_profile = models.TextField("キャラプロフィール",max_length=2000)
