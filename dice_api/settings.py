@@ -58,7 +58,6 @@ INSTALLED_APPS = [
     'rest_framework',          #add
     'appv1.apps.Appv1Config',  #add
     'django_filters', #add
-#    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -140,29 +139,26 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-
 STATIC_ROOT='/usr/share/nginx/html/static/'
 STATIC_URL='/static/'
-#test2
+
 CORS_ALLOW_CREDENTIALS = True
 
-if DEBUG:
-    CORS_ORIGIN_WHITELIST = (
+CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
     'http://127.0.0.1:8000',
+)
+if DEBUG:
+    CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8080',
 )
 
    # def show_toolbar(request):
@@ -185,7 +181,7 @@ if DEBUG:
         'debug_toolbar.panels.redirects.RedirectsPanel',
     ]
 
-    #INTERNAL_IPS = ['127.0.0.1','54.178.17.141']
+#INTERNAL_IPS = ['127.0.0.1','54.178.17.141']
 
 #    INSTALLED_APPS += (
 #        'nplusone.ext.django',
@@ -195,20 +191,9 @@ if DEBUG:
 #        'nplusone.ext.django.NPlusOneMiddleware',
 #        'debug_toolbar.middleware.DebugToolbarMiddleware',
 #    )
-    # ここで表示する内容を設定できます↓↓基本的にはこれでok
 #    DEBUG_TOOLBAR_CONFIG = {
 #        'SHOW_TOOLBAR_CALLBACK': show_toolbar,
 #    }
-
-    #django-cors-headers
-    #許可するオリジン
-#    CORS_ORIGIN_WHITELIST = [
-#       'localhost:*/', 
-#       'localhost:*',
-#       '192.168.100.106:8080/',
-#       '192.168.100.106:8080',
-#    ]
-    # レスポンスを公開する
 #loging
 if DEBUG:
     # will output to your console
