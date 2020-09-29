@@ -23,12 +23,23 @@ from django.conf.urls.static import static
 from django.conf.urls import url
 from django.views.static import serve
 
+from appv1 import views
+
+from appv1.views import TwitterLogin
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(trpg_session_api_router.urls)),
-    url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+   
+   
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
-] 
+    url(r'^api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
+
+]
+
 #urlpatterns += staticfiles_urlpatterns()
 #urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

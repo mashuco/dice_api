@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMaster,Item
- 
- 
+   
 class TrpgSessionSerializer(serializers.ModelSerializer):	
     #trpg_session_image = serializers.ImageField(max_length=None,use_url=True)
     #trpg_session_bgm = serializers.FileField(max_length=None,use_url=True)

@@ -4,6 +4,16 @@ from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMast
 from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer,SessionUserTWUpdateSerializer,SessionUserUpdateSerializer,SessionSceneSerializer,MemoSerializer,ItemMasterSerializer,ItemSerializer
 from rest_framework.permissions import IsAuthenticated
 
+from rest_framework.generics import GenericAPIView
+
+from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
+from rest_auth.registration.views import SocialLoginView
+from rest_auth.social_serializers import TwitterLoginSerializer
+   
+class TwitterLogin(SocialLoginView):
+    serializer_class = TwitterLoginSerializer
+    adapter_class = TwitterOAuthAdapter
+    
 class TrpgSessionFilter(django_filters.FilterSet):
     permission_classes = (IsAuthenticated,)
  
