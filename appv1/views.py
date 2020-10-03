@@ -5,6 +5,7 @@ from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSer
 from rest_framework.permissions import IsAuthenticated
 
 from rest_framework.generics import GenericAPIView
+from rest_framework.permissions import IsAuthenticated
 
 from allauth.socialaccount.providers.twitter.views import TwitterOAuthAdapter
 from rest_auth.registration.views import SocialLoginView
@@ -15,7 +16,6 @@ class TwitterLogin(SocialLoginView):
     adapter_class = TwitterOAuthAdapter
     
 class TrpgSessionFilter(django_filters.FilterSet):
-    permission_classes = (IsAuthenticated,)
  
     class Meta:
         model = TrpgSession
@@ -25,6 +25,7 @@ class TrpgSessionFilter(django_filters.FilterSet):
         	]
 
 class TrpgSessionSet(viewsets.ModelViewSet):
+    
     queryset = TrpgSession.objects.all()
     serializer_class = TrpgSessionSerializer
     filter_class = TrpgSessionFilter
