@@ -14,6 +14,7 @@ from rest_auth.social_serializers import TwitterLoginSerializer
 class TwitterLogin(SocialLoginView):
     serializer_class = TwitterLoginSerializer
     adapter_class = TwitterOAuthAdapter
+ 
     
 class TrpgSessionFilter(django_filters.FilterSet):
  
