@@ -1,6 +1,5 @@
 import django_filters
 from rest_framework import viewsets
-from rest_framework.response import Response
 from .models import TrpgSession,SessionUsers,DiceRoll,SessionScene,Memo,ItemMaster,Item
 from .serializer import TrpgSessionSerializer , SessionUserSerializer,DiceLogSerializer,DiceRollSerializer,SessionUserTWUpdateSerializer,SessionUserUpdateSerializer,SessionSceneSerializer,MemoSerializer,ItemMasterSerializer,ItemSerializer
 from rest_framework.permissions import IsAuthenticated
@@ -15,13 +14,6 @@ from rest_auth.social_serializers import TwitterLoginSerializer
 class TwitterLogin(SocialLoginView):
     serializer_class = TwitterLoginSerializer
     adapter_class = TwitterOAuthAdapter
-
-    def post(self,request):
-        Response['Access-Control-Allow-Origin'] = '*'
-        Response['Access-Control-Allow-Credentials'] = 'true'
-        Response['Access-Control-Allow-Headers'] = "Content-Type, Accept, X-CSRFToken"
-        Response['Access-Control-Allow-Methods'] = "POST, OPTIONS"
-        return Response
     
 class TrpgSessionFilter(django_filters.FilterSet):
  
