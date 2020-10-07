@@ -14,6 +14,14 @@ from rest_auth.social_serializers import TwitterLoginSerializer
 class TwitterLogin(SocialLoginView):
     serializer_class = TwitterLoginSerializer
     adapter_class = TwitterOAuthAdapter
+
+    def post(self,request):
+        response = HttpResponse()
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Credentials'] = 'true'
+        response['Access-Control-Allow-Headers'] = "Content-Type, Accept, X-CSRFToken"
+        response['Access-Control-Allow-Methods'] = "POST, OPTIONS"
+        return response
     
 class TrpgSessionFilter(django_filters.FilterSet):
  
