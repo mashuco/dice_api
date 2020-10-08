@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
     url(r'^api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
+    url(r'^api/rest-auth/', include('rest_auth.urls')),
 
 ]
 
