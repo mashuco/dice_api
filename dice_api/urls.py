@@ -39,6 +39,19 @@ urlpatterns = [
     url(r'^api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
     url(r'^api/rest-auth/', include('rest_auth.urls')),
 
+
+
+
+    url(r'^tray/admin/', admin.site.urls),
+    url(r'^tray/api/', include(trpg_session_api_router.urls)),
+
+    url(r'^tray/rest-auth/', include('rest_auth.urls')),
+    url(r'^tray/rest-auth/registration/', include('rest_auth.registration.urls')),
+
+    url(r'^tray/api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
+    url(r'^tray/api/rest-auth/', include('rest_auth.urls')),
+
+
 ]
 
 #urlpatterns += staticfiles_urlpatterns()
