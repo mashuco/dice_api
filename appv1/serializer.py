@@ -90,6 +90,7 @@ class DiceLogSerializer(serializers.ModelSerializer):
     character_image = serializers.ImageField(source = 'session_users.character_image')
     character_name = serializers.CharField(source = 'session_users.character_name')
     character_profile = serializers.CharField(source = 'session_users.character_profile')
+    character_image_no_url = serializers.CharField(source = 'session_users.character_image')
 
     class Meta:
         model = DiceRoll
@@ -98,6 +99,7 @@ class DiceLogSerializer(serializers.ModelSerializer):
         ,'twitter_users_photo'
         ,'twitter_users_name'
         ,'character_image'
+        ,'character_image_no_url'
         ,'character_name'
         ,'character_profile'
         ,'user_name'

@@ -29,14 +29,15 @@ from appv1.views import TwitterLogin
 
 
 urlpatterns = [
-    url(r'^pot/admin/', admin.site.urls),
-    url(r'^pot/api/', include(trpg_session_api_router.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(trpg_session_api_router.urls)),
 
-    url(r'^pot/rest-auth/', include('rest_auth.urls')),
-    url(r'^pot/rest-auth/registration/', include('rest_auth.registration.urls')),
+#    url(r'^rest-auth/', include('rest_auth.urls')),
+#    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
 
-    url(r'^pot/api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
-    url(r'^pot/api/rest-auth/', include('rest_auth.urls')),
+    url(r'^api/twitter/', TwitterLogin.as_view(), name='twitter_login'),
+    url(r'^api/rest-auth/', include('rest_auth.urls')),
+    url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')),
 ]
 
 #urlpatterns += staticfiles_urlpatterns()
