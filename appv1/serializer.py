@@ -18,7 +18,7 @@ class TrpgSessionSerializer(serializers.ModelSerializer):
 
 class SessionUserSerializer(serializers.ModelSerializer):	
     trpg_session_name = serializers.CharField(source = 'trpg_session.trpg_session_name')
-
+    character_image = serializers.ImageField(use_url=False)
     class Meta:
         model = SessionUsers
         fields = (
@@ -87,10 +87,9 @@ class SessionUserTWUpdateSerializer(serializers.ModelSerializer):
 
 class DiceLogSerializer(serializers.ModelSerializer):	
     user_name = serializers.CharField(source = 'session_users.name')
-    character_image = serializers.ImageField(source = 'session_users.character_image')
+    character_image = serializers.ImageField(source = 'session_users.character_image',use_url=False)
     character_name = serializers.CharField(source = 'session_users.character_name')
     character_profile = serializers.CharField(source = 'session_users.character_profile')
-    character_image_no_url = serializers.CharField(source = 'session_users.character_image')
 
     class Meta:
         model = DiceRoll
@@ -99,7 +98,6 @@ class DiceLogSerializer(serializers.ModelSerializer):
         ,'twitter_users_photo'
         ,'twitter_users_name'
         ,'character_image'
-        ,'character_image_no_url'
         ,'character_name'
         ,'character_profile'
         ,'user_name'
@@ -126,7 +124,7 @@ class DiceRollSerializer(serializers.ModelSerializer):
         )	
 
 class SessionSceneSerializer(serializers.ModelSerializer):	
-    scene_image = serializers.ImageField(max_length=None,use_url=True)
+    scene_image = serializers.ImageField(max_length=None,use_url=False)
     scene_bgm = serializers.FileField(max_length=None,use_url=True)
 
     class Meta:
