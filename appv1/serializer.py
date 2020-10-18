@@ -125,7 +125,7 @@ class DiceRollSerializer(serializers.ModelSerializer):
 
 class SessionSceneSerializer(serializers.ModelSerializer):	
     scene_image = serializers.ImageField(max_length=None,use_url=False)
-    scene_bgm = serializers.FileField(max_length=None,use_url=True)
+    scene_bgm = serializers.FileField(max_length=None,use_url=False)
 
     class Meta:
         model = SessionScene
