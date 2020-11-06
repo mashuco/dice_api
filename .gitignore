@@ -1,0 +1,9 @@
+*.pyc
+images/
+settings.py
+Pipfile
+Pipfile.lock
+static/
+.vscode/
+migrations/
+
