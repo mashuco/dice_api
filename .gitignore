@@ -4,5 +4,5 @@ Pipfile
 Pipfile.lock
 static/
 .vscode/
-migrations/
+
 
