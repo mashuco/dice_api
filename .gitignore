@@ -2,4 +2,4 @@ images/
 static/
 .vscode/
 migrations/
-
+__pycache__/
